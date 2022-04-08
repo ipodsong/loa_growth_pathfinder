@@ -1,0 +1,26 @@
+0. 목적
+코드를 읽으면 글을 읽는것처럼 느낄 수 있는것이 목적임
+
+1. 변수명
+-클래스, 메소드(함수)명 -> 파스칼 표기법(ex. HelloWorld, DivideByZero)
+-변수, 파라미터 -> 카멜 표기법(ex. helloWorld, divideByZero)
+-상수 -> 대문자, _로 구분(ex. TOTAL_NUMBER)
+
+2. 함수 이름 규칙
+-행위 + 대상을 기본으로 함(ex. getItemList())
+
+3. 주석
+-클래스, 메소드(함수) -> 위쪽에 내용 설명
+ex.
+
+/*
+작성자, 작성일시 : 홍길동, 20220408
+내용 : 함수 설명
+파라미터 : 파라미터 설명
+리턴 : 리턴값 설명
+*/
+returnType FunctionName(type parameterName, ...){ ... }
+
+-변수, 상수 -> 선언부에 설명
+ex. 
+type variableName; // 변수 설명
