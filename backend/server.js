@@ -1,10 +1,10 @@
 const express= require("express");
 const app = express();
+const cors = require("cors")
 require("dotenv").config();
 
 // 라우터
 const indexRouter = require("./routes/index");
-const getUserInfoRouter = require("./routes/getUserInfo");
 
 app.use(
     cors({
@@ -18,7 +18,6 @@ app.use(express.urlencoded({extended: false}));
 
 // 라우터 연결
 app.use("/", indexRouter);
-app.use("/user", getUserInfoRouter);
 
 // listen
-app.listen(PORT, () => console.log(`server port : ${PORT}`));
+app.listen(process.env.SERVER_PORT, () => console.log(`server port : ${process.env.SERVER_PORT}`));
