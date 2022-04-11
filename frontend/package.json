@@ -9,10 +9,6 @@
         "axios": "^0.26.1",
         "cross-env": "^7.0.3",
         "node-sass": "^7.0.1",
-<<<<<<< HEAD
-=======
-        "package.json": "^2.0.1",
->>>>>>> feature/frontend/#1-frontendInitSetting
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-router-dom": "^6.3.0",
