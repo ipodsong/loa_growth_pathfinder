@@ -5,9 +5,11 @@ require("dotenv").config();
 
 // Swagger
 const swaggerUi = require("swagger-ui-express");
-const swaggerFile = require("./swagger/swagger-output");
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerOption = require("./swagger/swagger");
+const specs = swaggerJsdoc(swaggerOption)
 
-app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(specs, {explorer: true}));
 
 // 라우터
 const indexRouter = require("./routes/index");
