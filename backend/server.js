@@ -1,6 +1,7 @@
 const express= require("express");
 const app = express();
 const cors = require("cors")
+const models = require("./models/index.js");
 require("dotenv").config();
 
 // Swagger
@@ -15,12 +16,21 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(specs, {explorer: true}));
 const indexRouter = require("./routes/index");
 const userRouter = require("./routes/user")
 
+//cors
 app.use(
     cors({
         origin:`http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`,
         credentials:true
     })
 );
+
+//sequelize
+models.sequelize.sync().then( () => {
+    console.log(" DB 연결 성공");
+}).catch(err => {
+    console.log("연결 실패");
+    console.log(err);
+})
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
