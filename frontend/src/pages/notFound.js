@@ -2,14 +2,14 @@ import React from "react";
 ///import { useParams } from "react-router";
 
 
-
-const notFound = () => {
+//not Found
+const NotFound = () => {
     return(
         <div>
-            <p>Found</p>
+            <p>not Found</p>
         </div>
     );
 };
 
 
-export default notFound;
+export default NotFound;

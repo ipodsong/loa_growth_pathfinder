@@ -1,22 +1,24 @@
-import React, {Component} from "react";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Home from "./Home.js";
-import Res from "./Res.js";
-import NotFound from "./NotFound";
+import React from "react";
+import { Route, Routes} from "react-router-dom";
+import Home from "./home.js";
+import User from "./user.js";
+import NotFound from "./notFound";
 
-const router = () =>{
+
+//page로 라우팅하는 함수
+const RoutePage = () =>{
     
     return(
         
-        <Router>
+        
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/res' element={<Res />} />
-                <Route path='/notFound/*' element={<NotFound />} />
+                <Route path='/user/:userName' element={<User />} />
+                <Route path='/*' element={<NotFound/>} />
             </Routes>
-        </Router>
+        
     );
     
 }
 
-export default router;
+export default RoutePage;
