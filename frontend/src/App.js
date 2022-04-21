@@ -1,8 +1,9 @@
 import React from 'react';
-import {BrowserRouter as  Router , Route, Routes} from "react-router-dom";
-import Home from './pages/home.js'
-import Res from './pages/res.js'
+import {BrowserRouter as  Router} from "react-router-dom";
+import NavBar from './containers/nav/navBar';
+import RoutePage from './pages/router';
 import './App.css';
+
 
 
 function App() {
@@ -11,13 +12,11 @@ function App() {
     
         return(
             <div className='App'>
+
             <div>
             <Router>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/res/user/:userName' element={<Res />} />
-                    <Route path='/*' element={<p>not found</p>} />
-                </Routes>
+                <NavBar/>
+                <RoutePage/>
             </Router>
             </div>
             </div>
